@@ -1,0 +1,92 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+  // Define some variables.
+  char op;
+  double num1, num2, res, angle;
+
+  // Display the menu.
+  printf("Scientific Calculator\n\n");
+  printf("1. Addition\n");
+  printf("2. Subtraction\n");
+  printf("3. Multiplication\n");
+  printf("4. Division\n");
+  printf("5. Square root\n");
+  printf("6. Sine\n");
+  printf("7. Cosine\n");
+  printf("8. Tangent\n");
+  printf("9. Exit\n\n");
+
+  // Get the user's choice.
+  scanf(" %c", &op);
+
+  // Switch on the user's choice.
+  switch (op) {
+    case '1':
+      printf("Enter two numbers: ");
+      scanf("%lf %lf", &num1, &num2);
+      res = num1 + num2;
+      printf("%lf + %lf = %lf\n", num1, num2, res);
+      break;
+    case '2':
+      printf("Enter two numbers: ");
+      scanf("%lf %lf", &num1, &num2);
+      res = num1 - num2;
+      printf("%lf - %lf = %lf\n", num1, num2, res);
+      break;
+    case '3':
+      printf("Enter two numbers: ");
+      scanf("%lf %lf", &num1, &num2);
+      res = num1 * num2;
+      printf("%lf * %lf = %lf\n", num1, num2, res);
+      break;
+    case '4':
+      printf("Enter two numbers: ");
+      scanf("%lf %lf", &num1, &num2);
+      res = num1 / num2;
+      printf("%lf / %lf = %lf\n", num1, num2, res);
+      break;
+    case '5':
+      printf("Enter a number: ");
+      scanf("%lf", &num1);
+      res = sqrt(num1);
+      printf("The square root of %lf is %lf\n", num1, res);
+      break;
+    case '6':
+      printf("Enter a number: ");
+      scanf("%lf", &num1);
+      angle = num1 * M_PI / 180.0;
+      res = sin(angle);
+      printf("The sine of %lf is %lf\n", num1, res);
+      break;
+    case '7':
+      printf("Enter a number: ");
+      scanf("%lf", &num1);
+      angle = num1 * M_PI / 180.0;
+      res = cos(angle);
+      printf("The cosine of %lf is %lf\n", num1, res);
+      break;
+    case '8':
+      printf("Enter a number: ");
+      scanf("%lf", &num1);
+      angle = num1 * M_PI / 180.0;
+      res = tan(angle);
+      printf("The tangent of %lf is %lf\n", num1, res);
+      break;
+    case '9':
+      return 0;
+  }
+
+  // Get the user's choice again.
+  printf("Do you want to continue? (y/n) ");
+  char c;
+  scanf(" %c", &c);
+
+  // If the user wants to continue, call the main function again.
+  if (c == 'y') {
+    main();
+  }
+
+  return 0;
+}
